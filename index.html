@@ -2468,16 +2468,26 @@
         }
         
         window.onresize = onResizeHandler;
-
-        document.getElementById('ajax-modal').on('hidden.bs.modal', function () {
-            const video = $(this).find('video').get(0);
-            if (video) {
-                video.pause();
-                video.currentTime = 0; // Optional: reset to beginning
-            }
-        });
     </script>
 
+    <script>
+    function closeModalAndStopVideo() {
+        // Manually hide the modal
+        const modal = document.getElementById('ajax-modal');
+        const modalInstance = bootstrap.Modal.getInstance(modal);
+            if (modalInstance) {
+            modalInstance.hide();
+        }
+
+        // Get the <video> element inside the modal using querySelector
+        const video = modal.querySelector('video');
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+    }
+    </script>
+    
     <!-- JS Libraries -->
     <script src="assets/js/jquery-1.11.3.min.js"></script>
     <!-- JS Plugins -->
