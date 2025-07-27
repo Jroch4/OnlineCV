@@ -21,21 +21,3 @@
 	<a href="#" class="ajax-close icon icon-hover icon-secondary icon-circle icon-xs" data-dismiss="close" onclick="closeModalAndStopVideo()"><i class="fa fa-close"></i></a>
 
 </div>
-
-    <script>
-    function closeModalAndStopVideo() {
-        // Manually hide the modal
-        const modal = document.getElementById('ajax-modal');
-        const modalInstance = bootstrap.Modal.getInstance(modal);
-            if (modalInstance) {
-            modalInstance.hide();
-        }
-
-        // Get the <video> element inside the modal using querySelector
-        const video = modal.querySelector('video');
-        if (video) {
-            video.pause();
-            video.currentTime = 0;
-        }
-    }
-    </script>

@@ -2468,26 +2468,24 @@
         }
         
         window.onresize = onResizeHandler;
+
     </script>
 
     <script>
-    function closeModalAndStopVideo() {
-        // Manually hide the modal
-        const modal = document.getElementById('ajax-modal');
-        const modalInstance = bootstrap.Modal.getInstance(modal);
-            if (modalInstance) {
-            modalInstance.hide();
-        }
+        function closeModalAndStopVideo() {
+            // Get the modal
+            const modal = document.getElementById('ajax-modal');
 
-        // Get the <video> element inside the modal using querySelector
-        const video = modal.querySelector('video');
-        if (video) {
-            video.pause();
-            video.currentTime = 0;
-        }
+            // Pause and reset the video
+            const video = modal.querySelector('video');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
     }
     </script>
-    
+
+
     <!-- JS Libraries -->
     <script src="assets/js/jquery-1.11.3.min.js"></script>
     <!-- JS Plugins -->
